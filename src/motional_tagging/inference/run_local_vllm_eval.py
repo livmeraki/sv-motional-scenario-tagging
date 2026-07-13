@@ -864,8 +864,8 @@ def main() -> int:
     )
     parser.add_argument("--no-gt-validation", action="store_true", help="Skip GT label comparison.")
     args = parser.parse_args()
-    INPUTS_DIR = args.model_input_root
-    OUTPUTS_DIR = args.output_root
+    INPUTS_DIR = args.model_input_root.resolve()
+    OUTPUTS_DIR = args.output_root.resolve()
     BEV_CACHE_DIR = OUTPUTS_DIR / "_bev_png_cache"
     RUNS_DIR = OUTPUTS_DIR / "runs"
     REPORT_TSV = OUTPUTS_DIR / "run_report.tsv"
@@ -899,7 +899,7 @@ def main() -> int:
         "max_tokens": args.max_tokens,
         "recording": args.recording,
         "window": window_dir.name,
-        "refined_json": str(refined_path.relative_to(ROOT)),
+        "refined_json": display_path(refined_path),
         "mode": args.mode,
         "gt_labels": None if args.no_gt_validation or gt_labels is None else display_path(gt_path),
         "bev_max_side": BEV_RENDER_MAX_SIDE if args.mode == "json_bev" else None,
@@ -972,7 +972,7 @@ def main() -> int:
         write_report_files(row)
         print(f"Response parsing failed: {exc}", file=sys.stderr)
         print(f"run_id: {run_id}")
-        print(f"report: {REPORT_TSV.relative_to(ROOT)}")
+        print(f"report: {display_path(REPORT_TSV)}")
         return 3
 
     write_outputs(run_output_dir, request_payload, raw_response, parsed_output, validation_errors, gt_validation)
@@ -1001,9 +1001,9 @@ def main() -> int:
     print(f"mode: {args.mode}")
     print(f"model: {model}")
     print(f"endpoint: {args.endpoint}")
-    print(f"output_dir: {run_output_dir.relative_to(ROOT)}")
-    print(f"latest_dir: {latest_output_dir.relative_to(ROOT)}")
-    print(f"report: {REPORT_TSV.relative_to(ROOT)}")
+    print(f"output_dir: {display_path(run_output_dir)}")
+    print(f"latest_dir: {display_path(latest_output_dir)}")
+    print(f"report: {display_path(REPORT_TSV)}")
     print(f"elapsed_s: {elapsed_s:.1f}")
     if validation_errors:
         print("validation: failed")
