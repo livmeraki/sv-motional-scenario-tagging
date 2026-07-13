@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "recording_id",
+    "window_id",
+    "model_mode",
+    "labels",
+    "overall_quality",
+    "review_priority"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "motional-scenario-model-output-v1"
+    },
+    "recording_id": {
+      "type": "string"
+    },
+    "window_id": {
+      "type": "string"
+    },
+    "model_mode": {
+      "type": "string",
+      "enum": ["json_only", "json_bev"]
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stationary",
+        "high_magnitude_speed",
+        "low_magnitude_speed",
+        "medium_magnitude_speed",
+        "following_lane_with_lead",
+        "following_lane_without_lead",
+        "starting_left_turn",
+        "starting_right_turn",
+        "stopping_with_lead",
+        "stopping_without_lead",
+        "near_multiple_pedestrians",
+        "near_multiple_motorcycle"
+      ],
+      "properties": {
+        "stationary": {"$ref": "#/$defs/label_decision"},
+        "high_magnitude_speed": {"$ref": "#/$defs/label_decision"},
+        "low_magnitude_speed": {"$ref": "#/$defs/label_decision"},
+        "medium_magnitude_speed": {"$ref": "#/$defs/label_decision"},
+        "following_lane_with_lead": {"$ref": "#/$defs/label_decision"},
+        "following_lane_without_lead": {"$ref": "#/$defs/label_decision"},
+        "starting_left_turn": {"$ref": "#/$defs/label_decision"},
+        "starting_right_turn": {"$ref": "#/$defs/label_decision"},
+        "stopping_with_lead": {"$ref": "#/$defs/label_decision"},
+        "stopping_without_lead": {"$ref": "#/$defs/label_decision"},
+        "near_multiple_pedestrians": {"$ref": "#/$defs/label_decision"},
+        "near_multiple_motorcycle": {"$ref": "#/$defs/label_decision"}
+      }
+    },
+    "overall_quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["confidence", "data_issues"],
+      "properties": {
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "data_issues": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "review_priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    }
+  },
+  "$defs": {
+    "label_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence",
+        "evidence_summary",
+        "evidence_frames",
+        "object_ids"
+      ],
+      "properties": {
+        "value": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence_summary": {
+          "type": "string"
+        },
+        "evidence_frames": {
+          "type": "array",
+          "items": {"type": "integer"}
+        },
+        "object_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and machine config
+.env
+.env.*
+!.env.example
+configs/local.yaml
+configs/server.yaml
+*.key
+*.pem
+
+# Data and generated outputs
+data/raw/
+data/external/
+data/production/
+outputs/*
+!outputs/README.md
+/quick_exploration_outputs/
+/scenario_tagging_pipeline/
+/model_inputs/
+/motional_windows/
+/canonical_frames/
+bev_*.png
+bev_*.svg
+bev_model_*.png
+model_output.json
+validation.json
+gt_evaluation.json
+evaluation_report.csv
+
+# Models and large binaries
+*.pcap
+*.h264
+*.mp4
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.tar
+*.tar.gz
+
+# Logs
+*.log
+logs/

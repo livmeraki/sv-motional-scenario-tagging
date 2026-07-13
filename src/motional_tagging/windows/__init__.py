@@ -1,0 +1,1 @@
+"""Motional window generation."""

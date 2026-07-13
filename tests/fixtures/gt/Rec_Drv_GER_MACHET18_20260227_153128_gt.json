@@ -1,0 +1,865 @@
+{
+  "schema_version": "scenario-gt-labels-v1",
+  "recording_id": "Rec_Drv_GER_MACHET18_20260227_153128",
+  "source_csv": "gt_labels/Rec_Drv_GER_MACHET18_20260227_153128_gt_template.csv",
+  "notes": [
+    "Human-editable GT labels generated from the filled CSV.",
+    "stationary and speed-band labels were filled from formula candidate_flags as requested.",
+    "reference_only fields are not GT labels."
+  ],
+  "label_fields": [
+    "stationary",
+    "high_magnitude_speed",
+    "low_magnitude_speed",
+    "medium_magnitude_speed",
+    "following_lane_with_lead",
+    "following_lane_without_lead",
+    "starting_left_turn",
+    "starting_right_turn",
+    "stopping_with_lead",
+    "stopping_without_lead",
+    "near_multiple_pedestrians",
+    "near_multiple_motorcycle"
+  ],
+  "candidate_filled_label_fields": [
+    "high_magnitude_speed",
+    "low_magnitude_speed",
+    "medium_magnitude_speed",
+    "stationary"
+  ],
+  "windows": [
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:000-049",
+      "start_frame": 0,
+      "end_frame": 49,
+      "start_time_s": 0.0,
+      "end_time_s": 4.9003,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_000-049/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_000-049/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_000-049/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:025-074",
+      "start_frame": 25,
+      "end_frame": 74,
+      "start_time_s": 2.5,
+      "end_time_s": 7.4002,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": true,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_025-074/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_025-074/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_025-074/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:050-099",
+      "start_frame": 50,
+      "end_frame": 99,
+      "start_time_s": 5.0001,
+      "end_time_s": 9.9003,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_050-099/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_050-099/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_050-099/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:075-124",
+      "start_frame": 75,
+      "end_frame": 124,
+      "start_time_s": 7.5002,
+      "end_time_s": 12.4006,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_075-124/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_075-124/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_075-124/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:100-149",
+      "start_frame": 100,
+      "end_frame": 149,
+      "start_time_s": 10.0002,
+      "end_time_s": 14.9004,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_100-149/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_100-149/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_100-149/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:125-174",
+      "start_frame": 125,
+      "end_frame": 174,
+      "start_time_s": 12.5006,
+      "end_time_s": 17.4003,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_125-174/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_125-174/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_125-174/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:150-199",
+      "start_frame": 150,
+      "end_frame": 199,
+      "start_time_s": 15.0004,
+      "end_time_s": 19.9004,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": true,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_150-199/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_150-199/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_150-199/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:175-224",
+      "start_frame": 175,
+      "end_frame": 224,
+      "start_time_s": 17.5003,
+      "end_time_s": 22.4003,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_175-224/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_175-224/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_175-224/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:200-249",
+      "start_frame": 200,
+      "end_frame": 249,
+      "start_time_s": 20.0002,
+      "end_time_s": 24.9005,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_200-249/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_200-249/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_200-249/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:225-274",
+      "start_frame": 225,
+      "end_frame": 274,
+      "start_time_s": 22.5001,
+      "end_time_s": 27.4001,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_225-274/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_225-274/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_225-274/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:250-299",
+      "start_frame": 250,
+      "end_frame": 299,
+      "start_time_s": 25.0004,
+      "end_time_s": 29.8995,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_250-299/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_250-299/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_250-299/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:275-324",
+      "start_frame": 275,
+      "end_frame": 324,
+      "start_time_s": 27.4998,
+      "end_time_s": 32.3989,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_275-324/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_275-324/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_275-324/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:300-349",
+      "start_frame": 300,
+      "end_frame": 349,
+      "start_time_s": 29.9993,
+      "end_time_s": 34.8995,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_300-349/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_300-349/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_300-349/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:325-374",
+      "start_frame": 325,
+      "end_frame": 374,
+      "start_time_s": 32.4989,
+      "end_time_s": 37.3993,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_325-374/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_325-374/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_325-374/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:350-399",
+      "start_frame": 350,
+      "end_frame": 399,
+      "start_time_s": 34.9997,
+      "end_time_s": 39.8993,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_350-399/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_350-399/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_350-399/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:375-424",
+      "start_frame": 375,
+      "end_frame": 424,
+      "start_time_s": 37.4993,
+      "end_time_s": 42.3995,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead",
+          "near_multiple_pedestrians"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_375-424/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_375-424/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_375-424/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:400-449",
+      "start_frame": 400,
+      "end_frame": 449,
+      "start_time_s": 39.9993,
+      "end_time_s": 44.8997,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead",
+          "near_multiple_pedestrians"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_400-449/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_400-449/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_400-449/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:425-474",
+      "start_frame": 425,
+      "end_frame": 474,
+      "start_time_s": 42.4994,
+      "end_time_s": 47.4004,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_without_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_425-474/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_425-474/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_425-474/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:450-499",
+      "start_frame": 450,
+      "end_frame": 499,
+      "start_time_s": 44.9998,
+      "end_time_s": 49.9004,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_450-499/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_450-499/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_450-499/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:475-524",
+      "start_frame": 475,
+      "end_frame": 524,
+      "start_time_s": 47.5006,
+      "end_time_s": 52.3999,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_475-524/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_475-524/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_475-524/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:500-549",
+      "start_frame": 500,
+      "end_frame": 549,
+      "start_time_s": 50.0002,
+      "end_time_s": 54.8999,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": false,
+        "near_multiple_motorcycle": false
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_500-549/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_500-549/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_500-549/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    },
+    {
+      "window_id": "Rec_Drv_GER_MACHET18_20260227_153128:525-574",
+      "start_frame": 525,
+      "end_frame": 574,
+      "start_time_s": 52.4999,
+      "end_time_s": 57.3999,
+      "labels": {
+        "stationary": false,
+        "high_magnitude_speed": false,
+        "low_magnitude_speed": false,
+        "medium_magnitude_speed": true,
+        "following_lane_with_lead": false,
+        "following_lane_without_lead": true,
+        "starting_left_turn": false,
+        "starting_right_turn": false,
+        "stopping_with_lead": false,
+        "stopping_without_lead": false,
+        "near_multiple_pedestrians": true,
+        "near_multiple_motorcycle": true
+      },
+      "confidence": null,
+      "needs_ld_review": true,
+      "notes": "",
+      "reviewer": "",
+      "reviewed_at": "",
+      "reference_only": {
+        "formula_candidate_tags": [
+          "medium_magnitude_speed",
+          "following_lane_with_lead"
+        ],
+        "model_bev_start": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_525-574/bev_start.svg",
+        "model_bev_middle": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_525-574/bev_middle.svg",
+        "model_bev_end": "model_inputs/Rec_Drv_GER_MACHET18_20260227_153128/Rec_Drv_GER_MACHET18_20260227_153128_525-574/bev_end.svg",
+        "debug_bev_start": "",
+        "debug_bev_middle": "",
+        "debug_bev_end": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+data_root: ./data/raw/2600_MV2_OD_traj_annotations
+output_root: ./outputs
+model_input_root: ./outputs/model_inputs
+gt_label_root: ./tests/fixtures/gt
+vllm:
+  base_url: http://127.0.0.1:8001/v1/chat/completions
+  text_model: Qwen/Qwen2.5-7B-Instruct
+  vision_model: Qwen/Qwen2.5-VL-7B-Instruct

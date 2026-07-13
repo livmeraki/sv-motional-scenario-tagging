@@ -1,0 +1,8 @@
+data_root: /path/to/private/2600_MV2_OD_traj_annotations
+output_root: /path/to/workspace/outputs
+model_input_root: /path/to/workspace/outputs/model_inputs
+gt_label_root: /path/to/private/gt_labels
+vllm:
+  base_url: http://127.0.0.1:8001/v1/chat/completions
+  model: Qwen/Qwen2.5-7B-Instruct
+  max_model_len: 8192
