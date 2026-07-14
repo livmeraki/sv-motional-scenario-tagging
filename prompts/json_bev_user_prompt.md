@@ -17,11 +17,9 @@ Important:
 - Use BEV images to validate spatial layout: lead candidates, nearby pedestrians/motorcycles, object grouping, and obvious path interactions.
 - Do not infer unavailable lane topology, traffic light status, traffic sign type, or map semantics from the image.
 - If JSON and BEV appear inconsistent, mark lower confidence and mention the inconsistency.
-- Keep each `evidence_summary` under 320 characters.
 
 Input JSON:
 
 ```json
 {{REFINED_JSON}}
 ```
-
