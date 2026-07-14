@@ -383,6 +383,8 @@ def build_messages(refined: dict[str, Any], mode: str, window_dir: Path) -> list
             "Compact-output rules for local vLLM: every label object MUST include the boolean key "
             "`value`. Use at most 3 evidence_frames per label, chosen only from [0,5,25,49]. "
             "Use at most 2 object_ids per label. Keep every evidence_summary under 90 characters. "
+            "For low_magnitude_speed, medium_magnitude_speed, and high_magnitude_speed, use median_speed_mps only; "
+            "set evidence_frames=[] and object_ids=[] because speed bands do not depend on frame or object evidence. "
             "Do not list all frames. Do not explain false labels in detail. "
             "Use terse numeric evidence, for example `median speed 10.05 m/s => medium`.\n\n"
         )
@@ -594,6 +596,11 @@ def validate_output(
             errors.append(f"labels.{label}.object_ids must be list")
         elif len(decision["object_ids"]) > 2:
             errors.append(f"labels.{label}.object_ids must contain at most 2 items")
+        if label in {"low_magnitude_speed", "medium_magnitude_speed", "high_magnitude_speed"}:
+            if decision.get("evidence_frames") != []:
+                errors.append(f"labels.{label}.evidence_frames must be empty for speed-band labels")
+            if decision.get("object_ids") != []:
+                errors.append(f"labels.{label}.object_ids must be empty for speed-band labels")
 
     expected_speed = expected_speed_labels(refined)
     if expected_speed:
@@ -635,6 +642,7 @@ def retry_prompt(validation_errors: list[str]) -> str:
         "Return only a corrected JSON object matching the requested schema. "
         "Fix numeric threshold mistakes. Shorten arrays: each evidence_frames array must have at most "
         "3 items and each object_ids array must have at most 2 items. "
+        "For speed-band labels, set evidence_frames=[] and object_ids=[] because speed bands use only median_speed_mps. "
         "Do not include markdown or explanation outside the JSON object."
     )
 
