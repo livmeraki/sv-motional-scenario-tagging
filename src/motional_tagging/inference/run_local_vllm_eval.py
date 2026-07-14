@@ -37,6 +37,8 @@ BEV_RENDER_MAX_SIDE = 256
 RUNS_DIR = OUTPUTS_DIR / "runs"
 REPORT_TSV = OUTPUTS_DIR / "run_report.tsv"
 REPORT_MD = OUTPUTS_DIR / "run_report.md"
+SPEED_BAND_LABELS = {"low_magnitude_speed", "medium_magnitude_speed", "high_magnitude_speed"}
+EGO_ONLY_LABELS = SPEED_BAND_LABELS | {"stationary", "starting_left_turn", "starting_right_turn"}
 REPORT_COLUMNS = [
     "Run",
     "Scene",
@@ -381,10 +383,13 @@ def build_messages(refined: dict[str, Any], mode: str, window_dir: Path) -> list
             "evidence_frames, and string-array object_ids. overall_quality has confidence and "
             "data_issues. review_priority is low, medium, or high.\n\n"
             "Compact-output rules for local vLLM: every label object MUST include the boolean key "
-            "`value`. Use at most 3 evidence_frames per label, chosen only from [0,5,25,49]. "
+            "`value`. Use at most 3 evidence_frames per label. "
             "Use at most 2 object_ids per label. Keep every evidence_summary under 90 characters. "
+            "For false labels, set evidence_frames=[] and object_ids=[] unless directly citing contradictory evidence. "
+            "For stationary, starting_left_turn, and starting_right_turn, set object_ids=[] because these are ego-motion labels. "
             "For low_magnitude_speed, medium_magnitude_speed, and high_magnitude_speed, use median_speed_mps only; "
             "set evidence_frames=[] and object_ids=[] because speed bands do not depend on frame or object evidence. "
+            "Do not use default object_ids; include object_ids only when the label depends on those objects. "
             "Do not list all frames. Do not explain false labels in detail. "
             "Use terse numeric evidence, for example `median speed 10.05 m/s => medium`.\n\n"
         )
@@ -596,7 +601,15 @@ def validate_output(
             errors.append(f"labels.{label}.object_ids must be list")
         elif len(decision["object_ids"]) > 2:
             errors.append(f"labels.{label}.object_ids must contain at most 2 items")
-        if label in {"low_magnitude_speed", "medium_magnitude_speed", "high_magnitude_speed"}:
+        value = decision.get("value")
+        if value is False:
+            if decision.get("evidence_frames") != []:
+                errors.append(f"labels.{label}.evidence_frames must be empty for false labels")
+            if decision.get("object_ids") != []:
+                errors.append(f"labels.{label}.object_ids must be empty for false labels")
+        if label in EGO_ONLY_LABELS and decision.get("object_ids") != []:
+            errors.append(f"labels.{label}.object_ids must be empty for ego-only labels")
+        if label in SPEED_BAND_LABELS:
             if decision.get("evidence_frames") != []:
                 errors.append(f"labels.{label}.evidence_frames must be empty for speed-band labels")
             if decision.get("object_ids") != []:
@@ -642,7 +655,10 @@ def retry_prompt(validation_errors: list[str]) -> str:
         "Return only a corrected JSON object matching the requested schema. "
         "Fix numeric threshold mistakes. Shorten arrays: each evidence_frames array must have at most "
         "3 items and each object_ids array must have at most 2 items. "
+        "For false labels, set evidence_frames=[] and object_ids=[]. "
+        "For ego-only labels, including stationary and turn labels, set object_ids=[]. "
         "For speed-band labels, set evidence_frames=[] and object_ids=[] because speed bands use only median_speed_mps. "
+        "Do not use default object IDs; include object_ids only when the label depends on those objects. "
         "Do not include markdown or explanation outside the JSON object."
     )
 

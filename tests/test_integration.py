@@ -170,11 +170,84 @@ def test_speed_band_labels_reject_frame_and_object_evidence() -> None:
     assert "labels.high_magnitude_speed.object_ids must be empty for speed-band labels" in errors
 
 
+def test_false_labels_reject_default_frame_and_object_evidence() -> None:
+    repo = Path(__file__).resolve().parents[1]
+    schema = json.loads((repo / "schemas" / "output_schema.json").read_text(encoding="utf-8"))
+    label_names = schema["properties"]["labels"]["required"]
+    labels = {
+        label: {
+            "value": False,
+            "confidence": 0.1,
+            "evidence_summary": "unsupported",
+            "evidence_frames": [],
+            "object_ids": [],
+        }
+        for label in label_names
+    }
+    labels["following_lane_with_lead"]["evidence_frames"] = [5, 25, 49]
+    labels["following_lane_with_lead"]["object_ids"] = ["1", "4"]
+    output = {
+        "schema_version": "motional-scenario-model-output-v1",
+        "recording_id": RECORDING,
+        "window_id": f"{RECORDING}:000-049",
+        "model_mode": "json_bev",
+        "labels": labels,
+        "overall_quality": {"confidence": 0.5, "data_issues": []},
+        "review_priority": "low",
+    }
+    refined = {"ego_summary": {"median_speed_mps": 0.0, "minimum_speed_mps": 0.0}}
+
+    errors = validate_output(output, RECORDING, f"{RECORDING}_000-049", "json_bev", refined)
+
+    assert "labels.following_lane_with_lead.evidence_frames must be empty for false labels" in errors
+    assert "labels.following_lane_with_lead.object_ids must be empty for false labels" in errors
+
+
+def test_ego_only_labels_reject_object_ids() -> None:
+    repo = Path(__file__).resolve().parents[1]
+    schema = json.loads((repo / "schemas" / "output_schema.json").read_text(encoding="utf-8"))
+    label_names = schema["properties"]["labels"]["required"]
+    labels = {
+        label: {
+            "value": False,
+            "confidence": 0.1,
+            "evidence_summary": "none",
+            "evidence_frames": [],
+            "object_ids": [],
+        }
+        for label in label_names
+    }
+    labels["starting_left_turn"] = {
+        "value": True,
+        "confidence": 0.8,
+        "evidence_summary": "yaw rate onset",
+        "evidence_frames": [25],
+        "object_ids": ["1"],
+    }
+    output = {
+        "schema_version": "motional-scenario-model-output-v1",
+        "recording_id": RECORDING,
+        "window_id": f"{RECORDING}:000-049",
+        "model_mode": "json_bev",
+        "labels": labels,
+        "overall_quality": {"confidence": 0.5, "data_issues": []},
+        "review_priority": "low",
+    }
+    refined = {"ego_summary": {"median_speed_mps": 0.0, "minimum_speed_mps": 0.0}}
+
+    errors = validate_output(output, RECORDING, f"{RECORDING}_000-049", "json_bev", refined)
+
+    assert "labels.starting_left_turn.object_ids must be empty for ego-only labels" in errors
+
+
 def test_retry_prompt_mentions_shortening_arrays() -> None:
     prompt = retry_prompt(["labels.stationary.object_ids must contain at most 2 items"])
     assert "Shorten arrays" in prompt
     assert "evidence_frames array must have at most 3 items" in prompt
     assert "object_ids array must have at most 2 items" in prompt
+    assert "For false labels, set evidence_frames=[] and object_ids=[]" in prompt
+    assert "For ego-only labels" in prompt
+    assert "Do not use default object IDs" in prompt
     assert "For speed-band labels, set evidence_frames=[] and object_ids=[]" in prompt
 
 
