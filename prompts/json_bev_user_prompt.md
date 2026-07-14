@@ -17,6 +17,11 @@ Important:
 - Use BEV images to validate spatial layout: lead candidates, nearby pedestrians/motorcycles, object grouping, and obvious path interactions.
 - Do not infer unavailable lane topology, traffic light status, traffic sign type, or map semantics from the image.
 - If JSON and BEV appear inconsistent, mark lower confidence and mention the inconsistency.
+- Do not use default evidence frames or default object IDs.
+- For false labels, use `evidence_frames: []` and `object_ids: []`.
+- For ego-motion labels (`stationary`, `starting_left_turn`, `starting_right_turn`), use `object_ids: []`.
+- For speed-band labels (`low_magnitude_speed`, `medium_magnitude_speed`, `high_magnitude_speed`), use only `median_speed_mps`; use `evidence_frames: []` and `object_ids: []`.
+- Include object IDs only when the label depends on those specific objects.
 
 Input JSON:
 
