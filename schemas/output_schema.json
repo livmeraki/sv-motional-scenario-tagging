@@ -103,14 +103,15 @@
         },
         "evidence_frames": {
           "type": "array",
+          "maxItems": 3,
           "items": {"type": "integer"}
         },
         "object_ids": {
           "type": "array",
+          "maxItems": 2,
           "items": {"type": "string"}
         }
       }
     }
   }
 }
-

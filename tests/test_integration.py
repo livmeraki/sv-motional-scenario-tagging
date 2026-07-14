@@ -10,7 +10,9 @@ from motional_tagging.canonical.build_canonical_od_json import build_recording a
 from motional_tagging.inference.run_local_vllm_eval import (
     load_gt_labels,
     output_window_ids,
+    retry_prompt,
     validate_against_gt,
+    validate_output,
 )
 from motional_tagging.model_inputs.build_bev_model_inputs import build_refined_json
 from motional_tagging.validation.validate_refined_model_input_schema import validate_refined
@@ -99,6 +101,47 @@ def test_output_schema_loads() -> None:
     schema = json.loads((repo / "schemas" / "output_schema.json").read_text(encoding="utf-8"))
     assert schema["properties"]["labels"]["required"]
     assert "stationary" in schema["properties"]["labels"]["required"]
+    decision_schema = schema["$defs"]["label_decision"]["properties"]
+    assert decision_schema["evidence_frames"]["maxItems"] == 3
+    assert decision_schema["object_ids"]["maxItems"] == 2
+
+
+def test_model_output_rejects_long_evidence_arrays() -> None:
+    repo = Path(__file__).resolve().parents[1]
+    schema = json.loads((repo / "schemas" / "output_schema.json").read_text(encoding="utf-8"))
+    label_names = schema["properties"]["labels"]["required"]
+    labels = {
+        label: {
+            "value": False,
+            "confidence": 0.1,
+            "evidence_summary": "none",
+            "evidence_frames": [0, 5, 25, 49],
+            "object_ids": ["1", "2", "3"],
+        }
+        for label in label_names
+    }
+    output = {
+        "schema_version": "motional-scenario-model-output-v1",
+        "recording_id": RECORDING,
+        "window_id": f"{RECORDING}:000-049",
+        "model_mode": "json_bev",
+        "labels": labels,
+        "overall_quality": {"confidence": 0.5, "data_issues": []},
+        "review_priority": "low",
+    }
+    refined = {"ego_summary": {"median_speed_mps": 0.0, "minimum_speed_mps": 0.0}}
+
+    errors = validate_output(output, RECORDING, f"{RECORDING}_000-049", "json_bev", refined)
+
+    assert "labels.stationary.evidence_frames must contain at most 3 items" in errors
+    assert "labels.stationary.object_ids must contain at most 2 items" in errors
+
+
+def test_retry_prompt_mentions_shortening_arrays() -> None:
+    prompt = retry_prompt(["labels.stationary.object_ids must contain at most 2 items"])
+    assert "Shorten arrays" in prompt
+    assert "evidence_frames array must have at most 3 items" in prompt
+    assert "object_ids array must have at most 2 items" in prompt
 
 
 def test_gt_window_id_matching() -> None:

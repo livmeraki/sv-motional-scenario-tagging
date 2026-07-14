@@ -588,8 +588,12 @@ def validate_output(
             errors.append(f"labels.{label}.evidence_summary must be string")
         if not isinstance(decision.get("evidence_frames"), list):
             errors.append(f"labels.{label}.evidence_frames must be list")
+        elif len(decision["evidence_frames"]) > 3:
+            errors.append(f"labels.{label}.evidence_frames must contain at most 3 items")
         if not isinstance(decision.get("object_ids"), list):
             errors.append(f"labels.{label}.object_ids must be list")
+        elif len(decision["object_ids"]) > 2:
+            errors.append(f"labels.{label}.object_ids must contain at most 2 items")
 
     expected_speed = expected_speed_labels(refined)
     if expected_speed:
@@ -629,7 +633,9 @@ def retry_prompt(validation_errors: list[str]) -> str:
         "Your previous response failed validation:\n"
         f"{error_lines}\n\n"
         "Return only a corrected JSON object matching the requested schema. "
-        "Fix numeric threshold mistakes. Do not include markdown or explanation outside the JSON object."
+        "Fix numeric threshold mistakes. Shorten arrays: each evidence_frames array must have at most "
+        "3 items and each object_ids array must have at most 2 items. "
+        "Do not include markdown or explanation outside the JSON object."
     )
 
 
