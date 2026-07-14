@@ -11,8 +11,8 @@ Rec_Drv_GER_MACHET18_20260227_153128
 Runs:
 
 1. Formula-only baseline from `preliminary_candidates.candidate_flags`.
-2. JSON-only Qwen3.5 9B Vision using `json_only_user_prompt.md`.
-3. JSON + BEV Qwen3.5 9B Vision using `json_bev_user_prompt.md`.
+2. JSON-only Qwen3 2B Vision using `json_only_user_prompt.md`.
+3. JSON + BEV Qwen3 2B Vision using `json_bev_user_prompt.md`.
 
 ## Bias control
 

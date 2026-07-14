@@ -7,12 +7,12 @@ The prompts are designed for the current model input package:
 ```text
 quick_exploration_outputs/model_inputs/<recording>/<window>/
   refined.json
-  bev_start.svg or .png
-  bev_middle.svg or .png
-  bev_end.svg or .png
+  bev_start.png
+  bev_middle.png
+  bev_end.png
 ```
 
-For Together Qwen3.5 9B Vision:
+For Together Qwen3 2B Vision:
 
 - Use `system_prompt.md` as the system message.
 - Use `json_only_user_prompt.md` for the JSON-only run.
@@ -27,6 +27,5 @@ Efficiency notes:
 - Send only one window per request.
 - Keep output concise and schema-valid.
 - Ask for evidence summaries, not hidden chain-of-thought.
-- Use PNG/JPEG BEV images for true vision input. SVG text should only be used
-  as a fallback text artifact.
+- Use PNG/JPEG BEV images for true vision input.
 
